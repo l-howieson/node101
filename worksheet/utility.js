@@ -11,6 +11,39 @@ export function subtract(a, b) {
  * "export" to the function definition (as seen in the
  * subtract example above)
  */
-function add(a, b) {
+export function add(a, b) {
   return a + b;
+}
+
+export function compare(a, b) {
+  if (a.length !== b.length) {
+    return false;
+  }
+  for (let i = 0; i < a.length; i++) {
+    if (a[i] !== b[i]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+export function largest(nums) {
+  let max = nums[0];
+  for (let i = 1; i < nums.length; i++) {
+    if (nums[i] > max) {
+      max = nums[i];
+    }
+  }
+  return max;
+}
+
+export function zeroest(array) {
+  let zeroest = array[0];
+
+  for (const item of array) {
+    if (Math.abs(item) < Math.abs(zeroest)) {
+      zeroest = item;
+    }
+  }
+  return zeroest;
 }
